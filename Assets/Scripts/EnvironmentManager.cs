@@ -5,15 +5,37 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 public class EnvironmentManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    public GameObject redBlockPrefab;
+    public int blockCount = 5;
+    public HunterAgent hunter;
+    public PredatorAgent predator;
+    private GameObject[] spawnedBlocks;
 
+    public void ResetEnvironment()
+    {
+        if (spawnedBlocks != null)
+        {
+            foreach (var block in spawnedBlocks)
+            {
+                if (block != null) Destroy(block);
+            }
+        }
+
+        spawnedBlocks = new GameObject[blockCount];
+        for (int i = 0; i < blockCount; i++)
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 0.5f, Random.Range(-9f, 9f));
+            spawnedBlocks[i] = Instantiate(redBlockPrefab, spawnPos, Quaternion.identity, transform);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public int CountRemainingBlocks()
     {
-
+        int count = 0;
+        foreach (var block in spawnedBlocks)
+        {
+            if (block != null) count++;
+        }
+        return count;
     }
 }
