@@ -13,7 +13,7 @@ public class HunterAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = new Vector3(Random.Range(-4f, 4f), 0.5f, Random.Range(-4f, 4f));
+        transform.localPosition = new Vector3(Random.Range(-3f, 3f), 0.5f, Random.Range(-3f, 3f));
         transform.localRotation = Quaternion.identity;
         environmentManager.ResetEnvironment();
     }
