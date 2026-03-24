@@ -24,7 +24,7 @@ public class EnvironmentManager : MonoBehaviour
         spawnedBlocks = new GameObject[blockCount];
         for (int i = 0; i < blockCount; i++)
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 0.5f, Random.Range(-9f, 9f));
+            Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 1f, Random.Range(-9f, 9f));
             spawnedBlocks[i] = Instantiate(redBlockPrefab, spawnPos, Quaternion.identity, transform);
         }
     }
