@@ -10,6 +10,7 @@ public class EnvironmentManager : MonoBehaviour
     public HunterAgent hunter;
     public PredatorAgent predator;
     private GameObject[] spawnedBlocks;
+    public int blocksRemaining;
 
     public void ResetEnvironment()
     {
@@ -21,6 +22,7 @@ public class EnvironmentManager : MonoBehaviour
             }
         }
 
+        blocksRemaining = blockCount;
         spawnedBlocks = new GameObject[blockCount];
         for (int i = 0; i < blockCount; i++)
         {

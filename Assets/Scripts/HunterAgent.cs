@@ -9,11 +9,11 @@ public class HunterAgent : Agent
     public PredatorAgent predator;
     public EnvironmentManager environmentManager;
     public float speedMultiplier = 0.5f;
-    public float rotationMultiplier = 5.0f;
+    public float rotationMultiplier = 8.0f;
 
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = new Vector3(Random.Range(-3f, 3f), 0.5f, Random.Range(-3f, 3f));
+        transform.localPosition = new Vector3(Random.Range(-4f, 4f), 0.5f, Random.Range(-4f, 4f));
         transform.localRotation = Quaternion.identity;
         environmentManager.ResetEnvironment();
     }
@@ -21,6 +21,7 @@ public class HunterAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.localPosition);
+        sensor.AddObservation(predator.transform.localPosition - transform.localPosition);
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
@@ -38,8 +39,9 @@ public class HunterAgent : Agent
         {
             AddReward(0.5f);
             Destroy(other.gameObject);
+            environmentManager.blocksRemaining--;
 
-            if (environmentManager.CountRemainingBlocks() == 0)
+            if (environmentManager.blocksRemaining <= 0)
             {
                 AddReward(1.0f);
                 predator.AddReward(-1.0f);

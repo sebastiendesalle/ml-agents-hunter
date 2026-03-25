@@ -8,11 +8,11 @@ public class PredatorAgent : Agent
 {
     public HunterAgent hunter;
     public EnvironmentManager environmentManager;
-    public float speedMultiplier = 0.4f;
+    public float speedMultiplier = 0.55f;
     public float rotationMultiplier = 5.0f;
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = new Vector3(Random.Range(-3f, 3f), 0.5f, Random.Range(-3f, 3f));
+        transform.localPosition = new Vector3(Random.Range(-4f, 4f), 0.5f, Random.Range(-4f, 4f));
         transform.localRotation = Quaternion.identity;
     }
 
@@ -42,6 +42,7 @@ public class PredatorAgent : Agent
         else if (other.CompareTag("Wall"))
         {
             AddReward(-0.5f);
+            hunter.EndEpisode();
             EndEpisode();
         }
     }

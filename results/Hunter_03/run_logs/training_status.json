@@ -1,0 +1,69 @@
+{
+    "Predator": {
+        "checkpoints": [
+            {
+                "steps": 499998,
+                "file_path": "results\\Hunter_03\\Predator\\Predator-499998.onnx",
+                "reward": 0.39487034650677344,
+                "creation_time": 1774453132.228546,
+                "auxillary_file_paths": [
+                    "results\\Hunter_03\\Predator\\Predator-499998.pt"
+                ]
+            },
+            {
+                "steps": 750006,
+                "file_path": "results\\Hunter_03\\Predator\\Predator-750006.onnx",
+                "reward": 0.15841212898793847,
+                "creation_time": 1774453923.923912,
+                "auxillary_file_paths": [
+                    "results\\Hunter_03\\Predator\\Predator-750006.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 750006,
+            "file_path": "results\\Hunter_03\\Predator.onnx",
+            "reward": 0.15841212898793847,
+            "creation_time": 1774453923.923912,
+            "auxillary_file_paths": [
+                "results\\Hunter_03\\Predator\\Predator-750006.pt"
+            ]
+        }
+    },
+    "Hunter": {
+        "checkpoints": [
+            {
+                "steps": 499998,
+                "file_path": "results\\Hunter_03\\Hunter\\Hunter-499998.onnx",
+                "reward": 0.7296161499344034,
+                "creation_time": 1774453132.284547,
+                "auxillary_file_paths": [
+                    "results\\Hunter_03\\Hunter\\Hunter-499998.pt"
+                ]
+            },
+            {
+                "steps": 750006,
+                "file_path": "results\\Hunter_03\\Hunter\\Hunter-750006.onnx",
+                "reward": 1.1735636850329811,
+                "creation_time": 1774453924.0265365,
+                "auxillary_file_paths": [
+                    "results\\Hunter_03\\Hunter\\Hunter-750006.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 750006,
+            "file_path": "results\\Hunter_03\\Hunter.onnx",
+            "reward": 1.1735636850329811,
+            "creation_time": 1774453924.0265365,
+            "auxillary_file_paths": [
+                "results\\Hunter_03\\Hunter\\Hunter-750006.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
